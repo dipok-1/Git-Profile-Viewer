@@ -6,6 +6,10 @@ import { Octokit, App } from "octokit";
 const app = express()
 mongodb()
 const octokit = new Octokit({auth:process.env.auth});
+import cors from 'cors';
+app.use(cors({
+  origin: 'http://localhost:5173'  // Allow frontend origin
+}));
 app.use(express.json())
 
 

@@ -2,7 +2,7 @@ import axios from "axios"
 import {formatDistanceToNow} from 'date-fns'
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-
+const apiBaseUrl = import.meta.env.VITE_API_URL;
 
 const user ={
     avatar_url:'',
@@ -40,8 +40,8 @@ const [repoResponse,setRepo] = useState<repo[]>([])
 useEffect(()=>{
    const fetchData = async()=>{
       const [response,repoResponse] = await Promise.all([
-          axios.get(`/api/user/${username}`),
-          axios.get(`/api/repo/${username}`)
+          axios.get(`${apiBaseUrl}/user/${username}`),
+          axios.get(`${apiBaseUrl}/repo/${username}`)
       ])
       setresponse(response.data.data)
       setRepo(repoResponse.data)

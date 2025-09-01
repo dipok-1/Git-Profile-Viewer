@@ -8,7 +8,7 @@ mongodb()
 const octokit = new Octokit({auth:process.env.auth});
 import cors from 'cors';
 app.use(cors({
-  origin: 'https://git-profile-viewer.onrender.com'  // Allow frontend origin
+  origin: 'https://git-profile-viewer-zeta.vercel.app'  // Allow frontend origin
 }));
 app.use(express.json())
 
